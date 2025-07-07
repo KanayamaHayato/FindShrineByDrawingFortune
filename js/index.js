@@ -55,3 +55,44 @@ button.addEventListener("click", () => {
 
     bg.style.backgroundImage = `url(${shrine.image})`;
 });
+
+const loadingBox = document.querySelector(".omikuji-loading");
+
+button.addEventListener("click", () => {
+    // ローディング演出を表示
+    loadingBox.style.display = "block";
+
+    // 結果を一時的に隠す
+    result.textContent = "";
+    shrineInfo.style.display = "none";
+
+    // 1秒後にくじの結果を表示
+    setTimeout(() => {
+        const number = Math.floor(Math.random() * omikuji.length);
+        const resultText = omikuji[number];
+        const shrine = shrineData[resultText];
+
+        result.textContent = `あなたの運勢は… ${resultText}！`;
+
+        // アニメーション（大吉だけ特別）
+        result.classList.remove("big-daikichi", "fade-in");
+        void result.offsetWidth;
+        if (resultText === "大吉") {
+            result.classList.add("big-daikichi");
+        } else {
+            result.classList.add("fade-in");
+        }
+
+        shrineName.textContent = shrine.name;
+        shrineDesc.textContent = shrine.desc;
+        link.href = shrine.url;
+        link.textContent = `神社の公式サイトへ`;
+        shrineInfo.style.display = "block";
+
+        bg.style.backgroundImage = `url(${shrine.image})`;
+
+        // ローディング終了
+        loadingBox.style.display = "none";
+
+    }, 1000); // 1秒間“くじを舞わせる”
+});
