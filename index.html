@@ -12,13 +12,18 @@
     <header class="header"></header>
 
     <main class="main">
-        <p class="result">ここにおみくじ結果が出るよ！</p>
-        <img class="shrine-image" src="" alt="神社の写真" style="display: none; max-width: 80%; height: auto; border-radius: 10px; margin: 10px 0;">
-        <a class="shrine-link" href="#" target="_blank" style="display: none;">おすすめの神社はこちら</a>
-        <br>
-        <button id="draw-button">おみくじを引く</button>
-    </main>
+        <div class="background-image"></div>
 
+        <div class="result-container">
+            <p class="result">ここにおみくじ結果が出るよ！</p>
+            <div class="shrine-info" style="display: none;">
+                <h2 class="shrine-name">神社名</h2>
+                <p class="shrine-description">ここに説明が入るよ</p>
+                <a class="shrine-link" href="#" target="_blank">神社の公式サイトへ</a>
+            </div>
+            <button id="draw-button">おみくじを引く</button>
+        </div>
+    </main>
 
     <footer class="footer"></footer>
 
