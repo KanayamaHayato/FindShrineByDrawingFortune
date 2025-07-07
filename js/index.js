@@ -5,6 +5,7 @@ const shrineName = document.querySelector(".shrine-name");
 const shrineDesc = document.querySelector(".shrine-description");
 const link = document.querySelector(".shrine-link");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 const omikuji = ["大吉", "中吉", "吉", "末吉", "凶"];
 const shrineLinks = {
@@ -14,6 +15,8 @@ const shrineLinks = {
     "末吉": { name: "川越氷川神社", url: "https://www.kawagoehikawa.jp/" },
     "凶":   { name: "鷲神社", url: "https://www.otorisama.or.jp/" }
 =======
+=======
+>>>>>>> Stashed changes
 const bg = document.querySelector(".background-image");
 
 const omikuji = ["大吉", "中吉", "吉", "末吉", "凶"];
@@ -55,6 +58,7 @@ button.addEventListener("click", () => {
     const number = Math.floor(Math.random() * omikuji.length);
     const resultText = omikuji[number];
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     result.textContent = resultText;
 
     const shrine = shrineLinks[resultText];
@@ -66,6 +70,12 @@ button.addEventListener("click", () => {
 
     result.textContent = `あなたの運勢は… ${resultText}！`;
 
+=======
+    const shrine = shrineData[resultText];
+
+    result.textContent = `あなたの運勢は… ${resultText}！`;
+
+>>>>>>> Stashed changes
     shrineName.textContent = shrine.name;
     shrineDesc.textContent = shrine.desc;
     link.href = shrine.url;
@@ -73,5 +83,8 @@ button.addEventListener("click", () => {
     shrineInfo.style.display = "block";
 
     bg.style.backgroundImage = `url(${shrine.image})`;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 });
