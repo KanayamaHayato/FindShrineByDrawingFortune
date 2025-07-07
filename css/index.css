@@ -47,3 +47,52 @@ button {
     padding: 10px 20px;
     cursor: pointer;
 }
+
+@keyframes bigBang {
+  0% {
+    transform: scale(0.3) rotate(-20deg);
+    opacity: 0;
+    text-shadow: none;
+  }
+  50% {
+    transform: scale(1.4) rotate(5deg);
+    opacity: 1;
+    text-shadow: 0 0 10px gold, 0 0 20px orange;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    text-shadow: 0 0 5px gold;
+  }
+}
+
+.big-daikichi {
+  animation: bigBang 1s ease-out forwards;
+  color: crimson;
+  font-weight: bold;
+}
+
+.omikuji-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+}
+
+.omikuji-rolling {
+  font-size: 1.5rem;
+  animation: shake 0.5s infinite;
+  color: #c00;
+  font-weight: bold;
+}
+
