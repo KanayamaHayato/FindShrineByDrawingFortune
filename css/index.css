@@ -1,0 +1,16 @@
+body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.result {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    cursor: pointer;
+}
