@@ -6,6 +6,25 @@ body, html {
     overflow: hidden;
 }
 
+header {
+  font-family: "Yu Gothic", sans-serif;
+  background: #fff8f0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: #e6d3b3;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+#clickable-title {
+  cursor: pointer; /* 手の形になるだけ */
+}
+
 .main {
     position: relative;
     width: 100%;
