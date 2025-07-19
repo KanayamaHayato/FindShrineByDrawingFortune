@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>鷲神社</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <main class="main">
+        <h1>鷲神社</h1>
+        <p id="omikuji-result" style="display: none; font-weight: bold; font-size: 1.5rem; color: crimson;"></p>
+        <img src="../img/washi.jpg" alt="鷲神社" style="max-width: 80%; border-radius: 10px;">
+        <p>東京都台東区にある鷲神社（おとりさま）は、商売繁盛・開運招福の神様。<br>
+        毎年11月の「酉の市」では、多くの人が縁起物の熊手を求めて訪れます。</p>
+        <a href="../index.html">← おみくじに戻る</a>
+    </main>
+</body>
+<script>
+  // URLから ?result=◯◯ を取得
+  const params = new URLSearchParams(window.location.search);
+  const result = params.get("result");
+
+  if (result) {
+    const container = document.getElementById("omikuji-result");
+    container.textContent = `あなたの運勢は… ${result}！`;
+    container.style.display = "block";
+  }
+</script>
+</html>
