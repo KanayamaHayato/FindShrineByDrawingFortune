@@ -1,37 +1,34 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>おみくじ</title>
-    <meta name="description" content="おみくじを引いて神社を探そう！">
-    <meta name="viewport" content="width=device-width">
-    <link href="css/index.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&family=Zen+Maru+Gothic&family=Dela+Gothic+One&family=Cherry+Bomb+One&family=Kaisei+Decol&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="header"></header>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>神社紹介 - トップ</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
 
-    <main class="main">
-        <div class="background-image"></div>
+    <body>
+        <header>
+            <h1>⛩ Find Shrine by Drawing Fortune ⛩</h1>
+            <p class="sub">ここらへんに神社の画像が出る！</p>
+        </header>
 
-        <div class="result-container">
-            <p class="result">ここにおみくじ結果が出るよ！</p>
-            <div class="shrine-info" style="display: none;">
-                <h2 class="shrine-name">神社名</h2>
-                <p class="shrine-description">ここに説明が入るよ</p>
-                <a class="shrine-link" href="#" target="_blank">神社の公式サイトへ</a>
-            </div>
-            <button id="draw-button">おみくじを引く</button>
-        </div>
-        <!-- くじアニメーション -->
-        <div class="omikuji-loading" style="display: none;">
-            <p class="omikuji-rolling">おみくじを引いています…</p>
-        </div>
+    <!-- メインビジュアル -->
+    <section class="main-visual">
+        <img src="images/main-shrine.jpg" alt="神社の写真">
+    </section>
 
-    </main>
+    <!-- おみくじ風クリックセクション -->
+        <section class="omikuji-area">
+            <h2>おみくじ風に神社を探す</h2>
+                <div class="omikuji-list">
+                    <!-- 神社紹介ページへのリンク（仮ページ名） -->
+                    <a href="shrine-list.html" class="omikuji">神社を一覧で探す</a>
+                    
+                    <!-- おみくじページ（すでに作成済）へのリンク -->
+                    <a href="omikuji.html" class="omikuji">おみくじで運命の神社を！</a>
+                </div>
+        </section>
 
-    <footer class="footer"></footer>
-
-    <script src="js/index.js"></script>
-</body>
+    </body>
 </html>

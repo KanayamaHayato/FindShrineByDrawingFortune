@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>おみくじ</title>
+    <meta name="description" content="おみくじを引いて神社を探そう！">
+    <meta name="viewport" content="width=device-width">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&family=Zen+Maru+Gothic&family=Dela+Gothic+One&family=Cherry+Bomb+One&family=Kaisei+Decol&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header"></header>
+
+    <main class="main">
+        <div class="background-image"></div>
+
+        <div class="result-container">
+            <p class="result">ここにおみくじ結果が出るよ！</p>
+            <div class="shrine-info" style="display: none;">
+                <h2 class="shrine-name">神社名</h2>
+                <p class="shrine-description">ここに説明が入るよ</p>
+                <a class="shrine-link" href="#" target="_blank">神社の公式サイトへ</a>
+            </div>
+            <button id="draw-button">おみくじを引く</button>
+        </div>
+        <!-- くじアニメーション -->
+        <div class="omikuji-loading" style="display: none;">
+            <p class="omikuji-rolling">おみくじを引いています…</p>
+        </div>
+
+    </main>
+
+    <footer class="footer"></footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

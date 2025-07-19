@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>川越氷川神社</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <main class="main">
+        <h1>川越氷川神社</h1>
+        <p id="omikuji-result" style="display: none; font-weight: bold; font-size: 1.5rem; color: crimson;"></p>
+        <img src="../img/kawagoe.jpg" alt="川越氷川神社" style="max-width: 80%; border-radius: 10px;">
+        <p>埼玉県川越市にある縁結びの神社として人気。<br>
+        夏には「縁むすび風鈴」など、幻想的なイベントも開催され、インスタ映えスポットとしても有名です。</p>
+        <a href="../index.html">← おみくじに戻る</a>
+    </main>
+</body>
+<script>
+  // URLから ?result=◯◯ を取得
+  const params = new URLSearchParams(window.location.search);
+  const result = params.get("result");
+
+  if (result) {
+    const container = document.getElementById("omikuji-result");
+    container.textContent = `あなたの運勢は… ${result}！`;
+    container.style.display = "block";
+  }
+</script>
+</html>

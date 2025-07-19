@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>伏見稲荷大社</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <main class="main">
+        <h1>伏見稲荷大社</h1>
+        <p id="omikuji-result" style="display: none; font-weight: bold; font-size: 1.5rem; color: crimson;"></p>
+        <img src="../img/fushimi.jpg" alt="伏見稲荷大社" style="max-width: 80%; border-radius: 10px;">
+        <p>京都の伏見にある、全国の稲荷神社の総本宮。<br>
+        朱色の「千本鳥居」は世界的にも有名で、商売繁盛や五穀豊穣の神様として多くの人々に親しまれています。</p>
+        <a href="../index.html">← おみくじに戻る</a>
+    </main>
+</body>
+<script>
+  // URLから ?result=◯◯ を取得
+  const params = new URLSearchParams(window.location.search);
+  const result = params.get("result");
+
+  if (result) {
+    const container = document.getElementById("omikuji-result");
+    container.textContent = `あなたの運勢は… ${result}！`;
+    container.style.display = "block";
+  }
+</script>
+</html>
