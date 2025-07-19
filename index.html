@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>神社紹介 - トップ</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>神社紹介 - トップ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Kaisei+Decol&family=Yuji+Boku&display=swap" rel="stylesheet">
+</head>
 
-    <body>
-        <header>
-            <h1>⛩ Find Shrine by Drawing Fortune ⛩</h1>
-            <p class="sub">ここらへんに神社の画像が出る予定！</p>
-        </header>
+<body>
+    <header>
+        <h1 id="clickable-title">⛩ Find Shrine by Drawing Fortune ⛩</h1>
+        <p class="sub">ここらへんに神社の画像が出る予定！</p>
+    </header>
 
     <!-- メインビジュアル -->
     <section class="main-visual">
         <img src="img/main-shrine.jpg" alt="神社の写真">
     </section>
 
+    <div class="torii-top"></div>
+    <div class="torii-wrapper">
+    <div class="torii-side torii-left">
+    <div class="kasagi"></div>
+    <div class="nuki"></div>
+    </div>
     <!-- おみくじ風クリックセクション -->
         <section class="omikuji-area">
-            <h2>おみくじ風に神社を探す</h2>
+            <h2><a class="omikuji-area-title">目次</a></h2>
                 <div class="omikuji-list">
-                    <!-- 神社紹介ページへのリンク -->
-                    <a href="shrine-list.html" class="omikuji">神社を一覧で探す</a>
-                    
-                    <!-- おみくじページへのリンク -->
-                    <a href="omikuji.html" class="omikuji">おみくじで運命の神社を！</a>
+                    <a href="shrine-list.html" class="omikuji-card slide-trigger slide-left">
+                        <span>おすすめの神社</span>
+                    </a>
+                    <a href="omikuji.html" class="omikuji-box slide-trigger slide-right">
+                        <span>おみくじを引く！</span>
+                    </a>
                 </div>
         </section>
+        <script src="js/omikuji-card.js"></script>
+        <div class="torii-side torii-right">
+        <div class="kasagi"></div>
+        <div class="nuki"></div>
+        </div>
+    </div>
+    
 
-    </body>
+</body>
 </html>
