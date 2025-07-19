@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>日本の美しい神社</title>
+  <link rel="stylesheet" href="css/shrine-list.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>日本の美しい神社</h1>
+      <p>伝統と自然が織りなす神聖な空間を巡る</p>
+    </div>
+    <div class="wave"></div>
+  </header>
+
+  <main>
+    <section class="shrine fadein">
+      <img src="washi.jpg" alt="鷲神社">
+      <h2>鷲神社（浅草）</h2>
+      <p>開運の神様として知られる鷲神社は、酉の市で有名です。</p>
+    </section>
+
+    <section class="shrine fadein">
+      <img src="fushimi.jpg" alt="伏見稲荷大社">
+      <h2>伏見稲荷大社（京都）</h2>
+      <p>千本鳥居が印象的な京都の人気神社。商売繁盛のご利益があります。</p>
+    </section>
+
+    <section class="shrine fadein">
+      <img src="kawagoe.jpg" alt="川越氷川神社">
+      <h2>川越氷川神社（埼玉）</h2>
+      <p>縁結びの神様として有名で、夏の風鈴回廊が美しいことで知られています。</p>
+    </section>
+
+    <section class="shrine fadein">
+      <img src="meiji.jpg" alt="明治神宮">
+      <h2>明治神宮（東京）</h2>
+      <p>都心にありながら自然に囲まれた癒しの空間。初詣には多くの参拝者が訪れます。</p>
+    </section>
+
+    <section class="shrine fadein">
+      <img src="sumiyoshi.jpg" alt="住吉大社">
+      <h2>住吉大社（大阪）</h2>
+      <p>朱塗りの建物が美しい神社で、海の安全や航海の守り神として信仰を集めています。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 神社紹介サイト</p>
+  </footer>
+
+  <script>
+    // スクロールで.fadeinにアニメーション付加
+    const fadeins = document.querySelectorAll('.fadein');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeins.forEach(f => observer.observe(f));
+  </script>
+</body>
+</html>
