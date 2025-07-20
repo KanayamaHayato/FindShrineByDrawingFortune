@@ -48,8 +48,21 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 神社紹介ページ </p>
+    <p>&copy; 2025 神社紹介サイト</p>
   </footer>
 
+  <script>
+    // スクロールで.fadeinにアニメーション付加
+    const fadeins = document.querySelectorAll('.fadein');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeins.forEach(f => observer.observe(f));
+  </script>
 </body>
 </html>
