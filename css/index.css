@@ -1,18 +1,39 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Zen Maru Gothic', sans-serif;
-    height: 100%;
-    overflow: hidden;
+
+
+.torii-left {
+  border-right: 3px solid #400000;
 }
 
-header {
-  font-family: "Yu Gothic", sans-serif;
-  background: #fff8f0;
+.torii-right {
+  border-left: 3px solid #400000;
+}
+
+/* 中央のコンテンツ */
+.omikuji-area {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0px;
+  flex-grow: 1;
+}
+
+
+body {
+  font-family: 'Zen Old Mincho', serif;
+  background-image: url("../img/back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0;
   padding: 0;
   text-align: center;
-  background: #e6d3b3;
+}
+
+header {
+  background-image: url("../img/header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 20px;
 }
 
@@ -25,93 +46,228 @@ header h1 {
   cursor: pointer; /* 手の形になるだけ */
 }
 
-.main {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+.sub {
+  font-size: 1rem;
+  color: #555;
 }
 
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3;
-    z-index: 0;
+.main-visual {
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  background-image: url("../img/main-shrine.jpg");
+  background-size: cover;         /* 拡大して全体を覆う */
+  background-position: center;    /* 中央に配置 */
+  background-repeat: no-repeat;   /* 繰り返しなし */
 }
 
-.result-container {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding-top: 80px;
-    color: #333;
+.main-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.shrine-info {
-    background: rgba(255, 255, 255, 0.8);
-    display: inline-block;
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 20px;
+.omikuji-area {
+  margin: 30px 0;
+  min-height: 300px; /* ← 追加 */
 }
 
-button {
-    margin-top: 30px;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    cursor: pointer;
+.omikuji-area-title{
+  color: #fff;
+  background-color: #000003;
+  margin: 20px auto;
+  border: 38px solid #000003;
+  border-radius: 12px;
 }
 
-@keyframes bigBang {
-  0% {
-    transform: scale(0.3) rotate(-20deg);
-    opacity: 0;
-    text-shadow: none;
-  }
-  50% {
-    transform: scale(1.4) rotate(5deg);
-    opacity: 1;
-    text-shadow: 0 0 10px gold, 0 0 20px orange;
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-    text-shadow: 0 0 5px gold;
-  }
+.omikuji-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+  padding: 0px;
 }
 
-.big-daikichi {
-  animation: bigBang 1s ease-out forwards;
-  color: crimson;
+.omikuji-box {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  background-image: url("../img/omikuji-box-R.png"); /* 背景あり */
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: 0;
+  transition: transform 0.3s ease;
+}
+
+.omikuji-box:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.omikuji-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  background-image: url("../img/omikuji-card-L.png"); /* 背景あり */
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+.omikuji-card:hover {
+  transform: scale(1.03);
+}
+
+.omikuji-card span {
+  font-size: 2.6rem;
   font-weight: bold;
+  font-family: "Yuji Boku", serif;
+  color: #4b0a0a;
+  text-shadow: 1px 1px 0 #fff;
+  text-align: center;
 }
 
-.omikuji-loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.85);
-    padding: 30px 50px;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    z-index: 10;
-}
-
-@keyframes shake {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(3deg); }
-  75% { transform: rotate(-3deg); }
-}
-
-.omikuji-rolling {
-  font-size: 1.5rem;
-  animation: shake 0.5s infinite;
-  color: #c00;
+.omikuji-box span {
+  font-size: 1.6rem;
   font-weight: bold;
+  font-family: "Yuji Boku", serif;
+  color: #4b0a0a;
+  text-shadow: 1px 1px 0 #fff;
+  text-align: center;
 }
 
+
+/* 初期状態 */
+.slide-trigger {
+  opacity: 0;
+}
+
+.slide-left {
+  transform: translateX(-80%);
+}
+
+.slide-right {
+  transform: translateX(80%);
+}
+
+/* アニメーション（左右） */
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  0% { transform: translateX(-80%); opacity: 0; }
+  100% { transform: translateX(0%); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  0% { transform: translateX(80%); opacity: 0; }
+  100% { transform: translateX(0%); opacity: 1;}
+}
+
+@media (min-width: 1200px) {
+.torii-top {
+  width: 100%;
+  max-width: 1800px;
+  height: 100px;
+  background: linear-gradient(to right, #6b1d1d, #a33333, #6b1d1d);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+}
+.torii-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 左右の柱（鳥居風） */
+.torii-side {
+  position: relative;
+  width: 100px;
+  background: linear-gradient(to bottom, #b03030, #8e0000);
+  border-left: none;
+  border-right: none;
+  box-shadow: inset -20px 0 10px rgba(0, 0, 0, 0.3),
+              inset 15px 0 10px rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+/*あまりにも重くなりすぎたので非表示*/
+/* .torii-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/wood-texture_3.jpg");
+  background-size: cover;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.torii-side::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/wood-texture.jpg");
+  background-size: cover;
+  opacity: 0.2;
+  pointer-events: none;
+} */
+
+/* 笠木（上部の太い横棒） */
+.kasagi {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 120px;
+  height: 20px;
+  background-color: #3b0e0e;
+  border-radius: 4px;
+}
+
+/* 貫（中段の横棒） */
+.nuki {
+  position: absolute;
+  top: 80px;
+  left: -5px;
+  width: 110px;
+  height: 10px;
+  background-color: #400000;
+  border-radius: 2px;
+}
+/*あまりにも重くなりすぎたので非表示*/
+/* .kasagi::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/wood-texture_2.jpg");
+  background-size: cover;
+  opacity: 0.2;
+  pointer-events: none;
+}
+.nuki::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/wood-texture_2.jpg");
+  background-size: cover;
+  opacity: 0.2;
+  pointer-events: none;
+} */
+}

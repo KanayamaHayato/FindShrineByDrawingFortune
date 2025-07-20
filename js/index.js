@@ -89,7 +89,7 @@ function drawOmikuji() {
 
     // 2秒後に自動遷移
     setTimeout(() => {
-    // ?result=中吉 をURLに含める
+    // result をURLに含める
     const encodedResult = encodeURIComponent(choice);
     window.location.href = `${shrine.page}?result=${encodedResult}`;
     }, 0);
