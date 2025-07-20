@@ -1,0 +1,63 @@
+body {
+  font-family: 'Noto Serif JP', serif;
+  margin: 0;
+  background: #fffaf3;
+  color: #333;
+}
+
+header {
+  background: #b3001b;
+  color: white;
+  text-align: center;
+  padding: 1.5em;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+main {
+  padding: 2em;
+  max-width: 800px;
+  margin: auto;
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1.5em;
+}
+
+.description h2 {
+  color: #b3001b;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3em;
+}
+
+ul {
+  padding-left: 1.2em;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 2em;
+  text-decoration: none;
+  background: #e60033;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background: #b3001b;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #e60033;
+  color: white;
+  margin-top: 3em;
+}
