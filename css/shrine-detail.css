@@ -1,12 +1,18 @@
 body {
   font-family: 'Noto Serif JP', serif;
   margin: 0;
-  background: #fffaf3;
   color: #333;
+
+  background-image: url('../img/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 header {
-  background: #e60033;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒 */
+  backdrop-filter: blur(4px);          /* 背景を軽くぼかす（対応ブラウザのみ） */
   color: white;
   text-align: center;
   padding: 2em 1em 1em;
@@ -42,9 +48,12 @@ header a {
 
 
 main {
-  padding: 2em;
-  max-width: 800px;
+  max-width: 960px;
   margin: auto;
+  padding: 2em;
+  background: rgba(255, 255, 255, 0.95); /* 少し透かし感ある背景 */
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .main-image {
