@@ -1,8 +1,7 @@
-body, html {
+body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
   font-family: 'Zen Old Mincho', serif;
   background-image: url("../img/back.jpg");
   background-size: cover;
@@ -15,13 +14,14 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  font-family: 'Zen Old Mincho', serif;
   margin: 0;
   text-align: center;
   padding: 20px;
+  color: white;
 }
 
 header h1 {
+  font-family: 'Zen Old Mincho', serif;
   font-size: 2rem;
   margin: 0;
 }
@@ -33,7 +33,7 @@ header h1 {
 .main {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -66,11 +66,26 @@ header h1 {
 }
 
 button {
-    background-image: url("../img/omikuji-box.png");
-    margin-top: 30px;
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    background-image: url("../img/omikuji-box.png"); /* 画像パス */
+    background-size: cover;         /* ボタン全体を覆う */
+    background-repeat: no-repeat;   /* 繰り返しなし */
+    background-position: center;    /* 中央寄せ */
+    border: none; 
     font-size: 1.2rem;
-    padding: 10px 20px;
+    color: rgb(213, 213, 213);
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-shadow: 0 0 3px rgb(255, 255, 255);
+    background-color: transparent;
     cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
 }
 
 @keyframes bigBang {
@@ -121,3 +136,107 @@ button {
   font-weight: bold;
 }
 
+.site-footer {
+  background: #4b2e2e url("../img/footer-texture.png");
+  color: #fff8f0;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Zen Old Mincho', serif;
+  border-top: 6px double #bda78e;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f0c674;
+}
+
+/* ハンバーガー */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  margin: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.hamburger span {
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* メニュー（初期は右に隠れてる） */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -70%;
+  width: 70%;
+  height: 100%;
+  background-color: #4b2e2e;
+  z-index: 1000;
+  padding-top: 100px;
+  transition: right 0.3s ease;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+.side-menu li {
+  margin: 20px 0;
+}
+.side-menu a {
+  color: #fff8f0;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+/* オーバーレイ */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+  display: none;
+}
+
+/* メニュー表示状態 */
+.side-menu.open {
+  right: 0;
+}
+.overlay.show {
+  display: block;
+}
+
+/* メディアクエリでスマホのみ表示 */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}

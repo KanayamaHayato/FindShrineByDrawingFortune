@@ -7,11 +7,34 @@
     <meta name="viewport" content="width=device-width">
     <link href="css/omikuji.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&family=Zen+Maru+Gothic&family=Dela+Gothic+One&family=Cherry+Bomb+One&family=Kaisei+Decol&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Kaisei+Decol&family=Yuji+Boku&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/omikujikun.png" type="image/png">
 </head>
 <body>
     <header>
         <h1 id="clickable-title">⛩ Find Shrine by Drawing Fortune ⛩</h1>
-        <p class="sub">ここらへんに神社の画像が出る予定！</p>
+        <p class="sub">おみくじを引いて運命の神社を！</p>
+    
+    <!-- ハンバーガー -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- オーバーレイ（暗背景） -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- スライドメニュー -->
+    <nav class="side-menu" id="side-menu">
+        <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="shrine-list.html">神社一覧</a></li>
+            <li><a href="omikuji.html">おみくじ</a></li>
+            <li><a href="#top">トップへ戻る</a></li>
+        </ul>
+    </nav>
     </header>
 
     <main class="main">
@@ -33,7 +56,17 @@
 
     </main>
 
-    <footer class="footer"></footer>
+   <footer class="site-footer">
+    <div class="footer-inner">
+        <p>2025 六根清浄. All rights reserved.</p>
+        <ul class="footer-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="shrine-list.html">神社一覧</a></li>
+        <li><a href="omikuji.html">おみくじ</a></li>
+        <li><a href="#top">トップへ戻る</a></li>
+        </ul>
+    </div>
+    </footer>
 
     <script src="js/index.js"></script>
     <script>
@@ -41,6 +74,21 @@
             // クリック時の動作
             window.location.href = "index.html";
         });
+    </script>
+    <script>
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('side-menu');
+    const overlay = document.getElementById('overlay');
+
+    hamburger.addEventListener('click', () => {
+        sideMenu.classList.toggle('open');
+        overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+        sideMenu.classList.remove('open');
+        overlay.classList.remove('show');
+    });
     </script>
 </body>
 </html>
