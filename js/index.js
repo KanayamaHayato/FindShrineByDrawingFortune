@@ -100,3 +100,4 @@ function drawOmikuji() {
 
 /* ===== 5. イベント登録 ===== */
 drawButton.addEventListener("click", drawOmikuji);
+
