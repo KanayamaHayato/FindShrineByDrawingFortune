@@ -13,6 +13,26 @@
       <h2></h2>
     </div>
     <div class="wave"></div>
+
+    <!-- ハンバーガー -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- オーバーレイ（暗背景） -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- スライドメニュー -->
+    <nav class="side-menu" id="side-menu">
+        <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="shrine-list.html">神社一覧</a></li>
+            <li><a href="omikuji.html">おみくじ</a></li>
+            <li><a href="#top">トップへ戻る</a></li>
+        </ul>
+    </nav>
   </header>
 
   <main>
@@ -70,8 +90,16 @@
 
   </main>
 
-  <footer>
-    <p>&copy; 2025 神社紹介サイト</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+        <p>2025 六根清浄. All rights reserved.</p>
+        <ul class="footer-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="shrine-list.html">神社一覧</a></li>
+        <li><a href="omikuji.html">おみくじ</a></li>
+        <li><a href="#top">トップへ戻る</a></li>
+        </ul>
+    </div>
   </footer>
 
   <script>
@@ -86,6 +114,21 @@
     }, { threshold: 0.1 });
 
     fadeins.forEach(f => observer.observe(f));
+  </script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('side-menu');
+    const overlay = document.getElementById('overlay');
+
+    hamburger.addEventListener('click', () => {
+        sideMenu.classList.toggle('open');
+        overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+        sideMenu.classList.remove('open');
+        overlay.classList.remove('show');
+    });
   </script>
 </body>
 </html>

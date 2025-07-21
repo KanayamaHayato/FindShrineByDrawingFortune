@@ -2,7 +2,6 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
   font-family: 'Zen Old Mincho', serif;
   background-size: cover;
   background-repeat: no-repeat;
@@ -120,3 +119,36 @@ button {
   font-weight: bold;
 }
 
+.site-footer {
+  background: #4b2e2e url("../img/footer-texture.png");
+  color: #fff8f0;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Zen Old Mincho', serif;
+  border-top: 6px double #bda78e;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f0c674;
+}
